@@ -2,25 +2,23 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ScannerInput } from '@/components/ScannerInput';
 import { ScanResults } from '@/components/ScanResults';
-import { analyzeContent } from '@/lib/ai-analyzer';
+import { useAnalyzeContent } from '@/hooks/useScanLogs';
 import { ScanResult } from '@/types/trustshield';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, Sparkles, Zap, Lock } from 'lucide-react';
+import { Shield, Sparkles, Zap, Lock, Brain } from 'lucide-react';
 
 export default function Scanner() {
-  const [isScanning, setIsScanning] = useState(false);
   const [cyberPeaceMode, setCyberPeaceMode] = useState(true);
   const [scanResult, setScanResult] = useState<Omit<ScanResult, 'id' | 'createdAt'> | null>(null);
+  
+  const analyzeContent = useAnalyzeContent();
 
   const handleScan = async (text: string, cyberPeace: boolean) => {
-    setIsScanning(true);
     try {
-      const result = await analyzeContent(text, cyberPeace);
+      const result = await analyzeContent.mutateAsync({ text, cyberPeaceMode: cyberPeace });
       setScanResult(result);
     } catch (error) {
       console.error('Scan failed:', error);
-    } finally {
-      setIsScanning(false);
     }
   };
 
@@ -38,8 +36,8 @@ export default function Scanner() {
           transition={{ type: 'spring', stiffness: 200, delay: 0.2 }}
           className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20"
         >
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-primary">Real-Time AI Safety Analysis</span>
+          <Brain className="w-4 h-4 text-primary" />
+          <span className="text-sm font-medium text-primary">Powered by Gemini AI</span>
         </motion.div>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
@@ -59,8 +57,8 @@ export default function Scanner() {
         className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"
       >
         {[
-          { icon: Shield, title: 'Risk Detection', desc: '6 detection types for comprehensive analysis' },
-          { icon: Zap, title: 'Instant Scoring', desc: 'Get trust scores in milliseconds' },
+          { icon: Shield, title: 'AI-Powered Detection', desc: 'Advanced ML models analyze your content' },
+          { icon: Zap, title: 'Real-time Analysis', desc: 'Get comprehensive results in seconds' },
           { icon: Lock, title: 'CyberPeace Mode', desc: 'Block harmful content automatically' },
         ].map((feature, i) => (
           <motion.div
@@ -103,7 +101,7 @@ export default function Scanner() {
           <CardContent>
             <ScannerInput
               onScan={handleScan}
-              isScanning={isScanning}
+              isScanning={analyzeContent.isPending}
               cyberPeaceMode={cyberPeaceMode}
               onCyberPeaceModeChange={setCyberPeaceMode}
             />
@@ -133,7 +131,7 @@ export default function Scanner() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
               { step: '01', title: 'Input', desc: 'Paste AI-generated text' },
-              { step: '02', title: 'Analyze', desc: 'ML models scan for risks' },
+              { step: '02', title: 'AI Analysis', desc: 'Gemini AI scans for risks' },
               { step: '03', title: 'Score', desc: 'Calculate trust score' },
               { step: '04', title: 'Report', desc: 'Get actionable insights' },
             ].map((item, i) => (
