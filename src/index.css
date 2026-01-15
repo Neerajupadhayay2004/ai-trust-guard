@@ -2,95 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* AI TrustShield Design System - Cybersecurity meets AI */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - Dark cyber theme */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Cyber Teal */
+    --primary: 174 72% 56%;
+    --primary-foreground: 222 47% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Deep Slate */
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Electric Blue */
+    --accent: 199 89% 48%;
+    --accent-foreground: 222 47% 6%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Status colors */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
 
-    --radius: 0.5rem;
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 6%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Risk level colors */
+    --risk-safe: 142 76% 36%;
+    --risk-low: 174 72% 56%;
+    --risk-medium: 38 92% 50%;
+    --risk-high: 25 95% 53%;
+    --risk-critical: 0 84% 60%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --border: 217 33% 20%;
+    --input: 217 33% 15%;
+    --ring: 174 72% 56%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --radius: 0.75rem;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 72% 56%), hsl(199 89% 48%));
+    --gradient-danger: linear-gradient(135deg, hsl(25 95% 53%), hsl(0 84% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(174 72% 56%));
+    --gradient-glow: linear-gradient(180deg, hsla(174, 72%, 56%, 0.15) 0%, transparent 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 10%) 0%, hsl(222 47% 8%) 100%);
+    --gradient-shield: radial-gradient(ellipse at center, hsla(174, 72%, 56%, 0.2) 0%, transparent 70%);
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsla(174, 72%, 56%, 0.3);
+    --shadow-card: 0 4px 24px hsla(0, 0%, 0%, 0.4);
+    --shadow-danger: 0 0 30px hsla(0, 84%, 60%, 0.3);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 174 72% 56%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 217 33% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 15%;
+    --sidebar-ring: 174 72% 56%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Same as root since we're dark-first */
   }
 }
 
@@ -100,6 +91,157 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
   }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Glowing border effect */
+  .glow-border {
+    @apply relative;
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3), var(--shadow-glow);
+  }
+
+  /* Trust score gauge styling */
+  .trust-gauge {
+    background: conic-gradient(
+      from 180deg,
+      hsl(var(--risk-critical)) 0deg,
+      hsl(var(--risk-high)) 72deg,
+      hsl(var(--risk-medium)) 144deg,
+      hsl(var(--risk-low)) 216deg,
+      hsl(var(--risk-safe)) 288deg,
+      hsl(var(--risk-safe)) 360deg
+    );
+  }
+
+  /* Animated pulse glow */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  /* Cyber grid background */
+  .cyber-grid {
+    background-image: 
+      linear-gradient(hsla(174, 72%, 56%, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(174, 72%, 56%, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Risk badge variants */
+  .risk-safe { @apply bg-[hsl(142,76%,36%)] text-white; }
+  .risk-low { @apply bg-[hsl(174,72%,56%)] text-[hsl(222,47%,6%)]; }
+  .risk-medium { @apply bg-[hsl(38,92%,50%)] text-[hsl(222,47%,6%)]; }
+  .risk-high { @apply bg-[hsl(25,95%,53%)] text-white; }
+  .risk-critical { @apply bg-[hsl(0,84%,60%)] text-white; }
+
+  /* Scan animation */
+  .scanning {
+    animation: scan 2s linear infinite;
+  }
+
+  /* Shimmer loading effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--secondary)) 0%,
+      hsl(var(--muted)) 50%,
+      hsl(var(--secondary)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-danger {
+    background-image: var(--gradient-danger);
+  }
+
+  .bg-gradient-success {
+    background-image: var(--gradient-success);
+  }
+
+  .bg-gradient-glow {
+    background-image: var(--gradient-glow);
+  }
+
+  .bg-gradient-card {
+    background-image: var(--gradient-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-danger {
+    box-shadow: var(--shadow-danger);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes scan {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
 }
