@@ -1,73 +1,161 @@
-# Welcome to your Lovable project
 
-## Project info
+# 🛡️ AI TrustShield – Real-Time Guardrails for Trustworthy AI
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+🔗 **Live Demo:**
+👉 [https://ai-trust-guard.vercel.app/](https://ai-trust-guard.vercel.app/)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 📌 Project Overview
 
-**Use Lovable**
+**AI TrustShield** is a full-stack web application designed to build **real-time guardrails for trustworthy, ethical, and responsible AI usage**.
+It analyzes AI prompts and responses to detect **misuse, hallucinations, bias, harmful content, and prompt injection attacks**, and assigns a **Trust Score (0–100)** with clear, explainable warnings.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+This project aligns strongly with **AI safety, cybersecurity, and CyberPeace principles**.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🎯 Problem Statement
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Modern AI systems often:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* Produce hallucinated or misleading information
+* Are vulnerable to prompt injection and misuse
+* Lack transparency and explainability
+* Can be exploited for scams, hate, and cybercrime
 
-Follow these steps:
+There is no universal **real-time safety layer** that evaluates AI outputs before users trust them.
+
+---
+
+## 💡 Solution
+
+AI TrustShield acts as a **middleware safety layer** between users and AI systems by:
+
+* Scanning prompts for malicious intent
+* Analyzing AI responses for risk factors
+* Generating a **Trust Score (0–100)**
+* Providing **explainable AI warnings**
+* Supporting a **CyberPeace Mode** to block harmful content
+
+---
+
+## 🚀 Key Features
+
+* 🔍 AI Output Risk Detection (toxicity, bias, hallucination)
+* 🧠 Prompt Injection & Jailbreak Detection
+* 📊 Trust Score Engine (0–100)
+* 🧾 Explainable Risk Warnings
+* 🛑 CyberPeace Mode (hate, scams, cybercrime prevention)
+* 📈 User-friendly Dashboard UI
+* 🌐 Scalable & API-ready architecture
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**
+
+* Vite
+* React
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+
+**Deployment**
+
+* Vercel
+
+**Planned / Extensible**
+
+* Backend APIs (Node.js / Express)
+* AI Safety Engine (Python + NLP)
+* Database integration
+* Browser extension support
+
+---
+
+## 🧩 System Flow (High-Level)
+
+```
+User Prompt
+   ↓
+Prompt Safety Check
+   ↓
+AI Response Generated
+   ↓
+AI TrustShield Risk Analysis
+   ↓
+Trust Score + Explanation
+   ↓
+Safe / Flagged Output to User
+```
+
+---
+
+## 📂 Project Setup (Local Development)
+
+### Prerequisites
+
+* Node.js
+* npm (or yarn)
+
+### Steps
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Run development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🌍 Impact
 
-**Use GitHub Codespaces**
+* Enhances **digital trust in AI systems**
+* Prevents **AI-assisted misinformation & cybercrime**
+* Promotes **ethical and responsible AI usage**
+* Supports **students, citizens, and organizations**
+* Contributes to a safer digital ecosystem
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 👥 Team Members
 
-This project is built with:
+* **Neeraj Upadhayay** – Project Lead & Full-Stack Developer
+* **Mariatnshu** – Contributor
+* **Ronak** – Contributor
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 📌 Proof of Concept (PoC)
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+This repository and deployed application serve as a **functional Proof of Concept**, demonstrating:
 
-## Can I connect a custom domain to my Lovable project?
+* Real-time AI safety UI
+* Trust-based AI evaluation concept
+* Scalable architecture for future AI integrations
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🔮 Future Enhancements
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+* Backend AI risk scoring engine
+* Explainable AI dashboards
+* Browser extension integration
+* Enterprise AI governance APIs
+* Admin safety policy controls
+
+---
+
+## 📜 License
+
+This project is developed for **educational and hackathon purposes**.
